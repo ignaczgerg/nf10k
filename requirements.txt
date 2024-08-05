@@ -1,0 +1,22 @@
+pandas==1.4.3
+numpy==1.23.1
+rdkit==2023.3.3
+mordred==1.2.0
+scikit-learn==0.24.2
+matplotlib==3.5.2
+scipy==1.8.1
+simplejson==3.16.0
+jsonpatch==1.22
+jsonpointer==2.0
+jsonschema==3.2.0
+pandas-flavor==0.6.0
+tqdm==4.66.1
+networkx==2.8.8
+Werkzeug==2.3.7
+typed-argument-parser==1.8.1
+tensorboardX==2.6.2.2
+hyperopt==0.2.7
+plotly==5.17.0
+torch==1.10.1 -f https://download.pytorch.org/whl/cpu/torch_stable.html
+torchvision==0.11.2 -f https://download.pytorch.org/whl/cpu/torch_stable.html
+torchaudio==0.10.1 -f https://download.pytorch.org/whl/cpu/torch_stable.html

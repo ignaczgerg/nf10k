@@ -1,0 +1,114 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+    
+
+    <form enctype="multipart/form-data" method="POST">
+        <!--Model checkpoint selector-->
+        <h5>Model checkpoint</h5>
+        
+
+        <br>
+        <br>
+
+        <!--SMILES upload type selector-->
+        <!-- <div class="btn-group" id="inputSelect" data-toggle="buttons">
+            <label id="textButton" class="btn btn-primary active">
+              <input type="radio" name="inputType" value="text" autocomplete="off"> Text Input
+            </label>
+        </div> -->
+
+        <br>
+
+        
+
+        <!--SMILES input-->
+        <div id="textInputForm">
+            <h5>SMILES</h5>
+            <textarea id="textSmilesInput" name="textSmiles" cols="20" rows="1" placeholder="SMILES" required autofocus></textarea>
+        </div>
+        <div id="textInputForm">
+            <h5>Configuration</h5>
+            <select name="textConfiguration" id="textConfiguration" required>
+                <option selected disabled>Select the application domain</option>
+                <option value="OSN">Organic solvent nanofiltration</option>
+                <option value="NF">Water-based nanofiltration</option>
+            </select>
+        </div>
+        
+        <div id="textInputForm">
+            <h5>Membrane</h5>
+            <select name="textMembrane" id="textMembrane" required>
+                <option selected disabled>Select a membrane</option>
+                <option value="DM300" data-level="OSN" data-level2="organic" data-level3="crosslinked">Duramem 300</option>
+                <option value="GMT-oNF-2" data-level="OSN" data-level2="organic" data-level3="not_crosslinked">Borsig GMT-oNF-2 (polysulfone)</option>
+                <option value="PBI" data-level="OSN" data-level2="organic" data-level3="not_crosslinked">non-crosslinked polybenzimidazole</option>
+                <option value="PMS600" data-level="OSN" data-level2="organic" data-level3="not_crosslinked">Puramem Selective 600</option>
+                <option value="SM122" data-level="OSN" data-level2="organic" data-level3="not_crosslinked">Starmem 122</option>
+                <option value="NF90" data-level="NF" data-level2="water" data-level3="not_crosslinked">DuPont FilmTech NF90</option>
+                <option value="NF270" data-level="NF" data-level2="water" data-level3="not_crosslinked">DuPont FilmTech NF270</option>
+            </select>
+        </div>
+        
+        <div id="textInputForm">
+            <h5>Solvent</h5>
+            <select name="textSolvent" id="textSolvent" required>
+                <option selected disabled>Select a solvent</option>
+                <option value="Acetone" data-level2="organic" data-level3="not_crosslinked">Acetone</option>
+                <option value="Acetonitrile" data-level2="organic" data-level3="not_crosslinked">Acetonitrile</option>
+                <option value="Dimethyl formamide" ddata-level2="organic" data-level3="crosslinked">Dimethyl formamide</option>
+                <option value="Ethanol" data-level2="organic" data-level3="not_crosslinked">Ethanol</option>
+                <option value="Ethyl acetate" data-level2="organic" data-level3="not_crosslinked">Ethyl acetate</option>
+                <option value="Methanol" data-level2="organic" data-level3="not_crosslinked">Methanol</option>
+                <option value="Methyl tetrahydrofuran" data-level2="organic" data-level3="not_crosslinked">Methyl tetrahydrofuran</option>
+                <option value="Toluene" data-level2="organic" data-level3="not_crosslinked">Toluene</option>
+                <option value="Water" data-level2="water" data-level3="not_crosslinked">Water</option>
+            </select>
+        </div>
+
+        <br>
+
+        <!--SMILES input functionality-->
+        <script>
+            let membraneSelect = document.querySelector('#textMembrane');
+            let solventSelect = document.querySelector('#textSolvent');
+            let configurationSelect = document.querySelector('#textConfiguration')
+
+            document.getElementById('textConfiguration').onchange = function() {
+                let level = this.value;
+
+                membraneSelect.querySelectorAll('option[value]').forEach(function(option) {
+                    let match = level === option.getAttribute('data-level');
+                    option.disabled = !match;
+                    if (!match) {
+                        membraneSelect.appendChild(option);
+                    }
+                });
+                membraneSelect.querySelector('option').selected = true;
+            };
+
+        </script>
+        
+        <button type="submit" class="btn btn-primary btn-md">Predict</button>
+    </form>
+
+    <br>
+
+    {% if predicted %}
+        <hr>
+ 
+        <br>
+
+        {% for i in range(num_smiles) %}
+            <p>SMILES: {{ smiles[i] }}</p>
+
+            {% for j in range(num_tasks) %}
+                <p>{{ task_names[j] }}: {{ preds[i][j] }}</p>
+            {% endfor %}
+
+            <hr>
+        {% endfor %}
+        
+    {% endif %}
+{% endblock %}
