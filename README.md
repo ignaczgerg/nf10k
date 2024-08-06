@@ -24,7 +24,7 @@ Solute rejection prediction can be made by running the `prediction.py` script. T
 -    `--configuration <configuration>` the script only accepts: `OSN, "Loose NF", NF`
 For example, to predict the rejection of paracematol in methanol in Duramem 300 membrane, run this command: 
 -   `python prediction.py --smiles "CC(=O)Oc1ccccc1C(=O)O" --membrane DM300 --solvent Methanol --configuration OSN`
-Expected output: `{'smiles': 'CC(=O)Oc1ccccc1C(=O)O', 'membrane': 'DM300', 'solvent': 'Methanol', 'configuration': 'OSN', 'rejection': 0.841'}` where the rejection is the predicted rejection of the molecule in the given conditions. There is also `user_predictions.csv` file that contains the predictions of the last run. Re-running the script will overwrote the new predictions to the file. A single-solute run takes around ~10 seconds to finish.
+Expected output: `{'smiles': 'CC(=O)Oc1ccccc1C(=O)O', 'membrane': 'DM300', 'solvent': 'Methanol', 'configuration': 'OSN', 'rejection': 0.841'}` where the rejection is the predicted rejection of the molecule in the given conditions. There is also `user_predictions.csv` file that contains the predictions of the last run. Re-running the script will overwrite the previous results. A single-solute run takes around ~10 seconds to finish.
 
 ## Recreating the results of the paper
 The results of the paper can be recreated by running the `run_paper_predictions.py` script. The script will run the predictions for all the molecules. The results will be saved in the `results/paper_predictions.csv`. The script takes between 2-5 minutes to finish.
