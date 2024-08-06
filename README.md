@@ -20,7 +20,7 @@ The installation process (without conda/miniconda) will take around ~5 minutes.
 Solute rejection prediction can be made by running the `prediction.py` script. The script requires the following arguments:
 -    `--smiles <"SMILES string of the molecule">` 
 -    `--membrane <membrane>` the script only accepts: `DM300, GMT-oNF-2, PBI, NF90, PMS600, SM122, NF270`
--    `--solvent <solvent_name>` the script only accepts: `Water, Toluene, "Methyl tetrahydrofuran", Methanol, Ethanol, "Dimethyl formamide", Acetonitrile, Acetone, Ethyl acetate`
+-    `--solvent <solvent_name>` the script only accepts: `Water, Toluene, "Methyl tetrahydrofuran", Methanol, Ethanol, "Dimethyl formamide", Acetonitrile, Acetone, "Ethyl acetate"`
 -    `--configuration <configuration>` the script only accepts: `OSN, "Loose NF", NF`
 For example, to predict the rejection of paracematol in methanol in Duramem 300 membrane, run this command: 
 -   `python prediction.py --smiles "CC(=O)Oc1ccccc1C(=O)O" --membrane DM300 --solvent Methanol --configuration OSN`
