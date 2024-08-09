@@ -1,5 +1,3 @@
-This repository contains the code to reproduce the predictions described in the work "Tipping the chemical separation iceberg: hybrid modeling for nanofiltration in energy-conscious manufacturing" By Gergo Ignacz, Aron K. Beke, Viktor Toth, and Gyorgy Szekely. 
-
 ## Requirements
 The code is built upon [chemprop-v1](https://github.com/chemprop/chemprop/blob/v1.7.1/README.md) and [descriptastorus](https://github.com/bp-kelley/descriptastorus). The required versions are provided in this repository. All credit for the chemprop and descriptastorus packages goes to their respective authors. Our models needs the following requirements:
 - python 3.9
