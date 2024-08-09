@@ -1,5 +1,5 @@
 Command line
-python train.py --data_path train_smiles.csv --dataset_type regression --target_columns rejection --smiles_columns full_smiles --features_generator custom --save_dir nf10k_train_ensemble_3/ --epochs 120 --num_folds 3 --ensemble 3 --extra_metric r2 --quiet
+python train.py --data_path train_smiles.csv --dataset_type regression --target_columns rejection --smiles_columns full_smiles --features_generator custom --save_dir models/ --epochs 120 --num_folds 3 --ensemble 3 --extra_metric r2 --quiet
 Args
 {'activation': 'ReLU',
  'adding_h': False,
@@ -86,7 +86,7 @@ Args
  'reaction_mode': 'reac_diff',
  'reaction_solvent': False,
  'resume_experiment': False,
- 'save_dir': 'nf10k_train_ensemble_3/',
+ 'save_dir': 'models/',
  'save_preds': False,
  'save_smiles_splits': False,
  'seed': 0,

@@ -94,14 +94,14 @@
     "reaction_mode": "reac_diff",
     "reaction_solvent": false,
     "reproducibility": {
-        "command_line": "python train.py --data_path train_smiles.csv --dataset_type regression --target_columns rejection --smiles_columns full_smiles --features_generator custom --save_dir nf10k_train_ensemble_3/ --epochs 120 --num_folds 3 --ensemble 3 --extra_metric r2 --quiet",
+        "command_line": "python train.py --data_path train_smiles.csv --dataset_type regression --target_columns rejection --smiles_columns full_smiles --features_generator custom --save_dir models/ --epochs 120 --num_folds 3 --ensemble 3 --extra_metric r2 --quiet",
         "git_has_uncommitted_changes": true,
         "git_root": "/home/ignaczg/Downloads/nf10k/chemprop",
         "git_url": "https://github.com/chemprop/chemprop/tree/9fb0d3bbb58f1f0ef737c00e8816e99abd7f5199",
         "time": "Tue Apr 18 10:26:42 2023"
     },
     "resume_experiment": false,
-    "save_dir": "nf10k_train_ensemble_3/",
+    "save_dir": "models/",
     "save_preds": false,
     "save_smiles_splits": false,
     "seed": 0,

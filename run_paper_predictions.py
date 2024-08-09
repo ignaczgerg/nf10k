@@ -14,7 +14,7 @@ def gnn_prediction(paper_id, smiles, membrane, solvent, configuration):
     arguments = [
         '--test_path', 'results/_temp/temp_generated_features.csv', 
         '--preds_path', 'results/_temp/temp_predictions.csv',
-        '--checkpoint_dir', 'nf10k_train_ensemble_3/',
+        '--checkpoint_dir', 'models/',
         '--smiles_columns', 'full_smiles',
         '--features_generator', 'custom',  
         '--no_cuda'

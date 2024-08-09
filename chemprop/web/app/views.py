@@ -365,7 +365,7 @@ def predict():
     arguments = [
         '--test_path', 'temp_generated_features.csv', # the generated features path
         '--preds_path', 'pred_temp.csv', # where to save the predictions TODO: can we remove this?
-        '--checkpoint_dir', 'nf10k_train_ensemble_3/fold_0/model_0/',
+        '--checkpoint_dir', 'models/fold_0/model_0/',
         '--smiles_columns', 'full_smiles', # specify which column contains the smiles for the model. This is important. 
                                            # this "full_smiles" are not the same as 'smiles' from the user. During the 
                                            # feature generation, addidtional terms are added to the smiles str. 
